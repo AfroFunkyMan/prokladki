@@ -35,16 +35,48 @@ app.post('/login', function(req, res, next){
   if (req.body.login === 'admin' && req.body.pass === 'Heckfy1978ycr!'){
     res.cookie('user', {
       user: 'p1yebcv3764cvb19348fyubgd48c7r9627rbc0cr87fg9n4cybgrq87vwavrtvycbfn4g7q8r7vbtcf9n67w4tvb6cfb9q',
-      domain:'.localhost',
+      domain:'localhost',
       path:'/admin',
       secure: true,
       httpOnly: true,
-      expires: new Date(Date.now() + 900000)
+      expires: 0
     });
     res.redirect('/admin');
   } else {
     res.render('login', {title: 'u r not auth!'});
   }
+});
+
+app.post('/get-company', function(req, res, next){
+  if (req.body.company){
+    req.app.get('mongodb').collection('company').findOne({name:req.body.company},function(err, company){
+      if (err) next(new Error('not find'));
+      else {
+        if (company) res.render('admin', {title: 'express', toggle: false, company:company});
+        else res.render('admin', {title: 'express', toggle: false});
+      }
+    });
+  }
+});
+app.post('/upsert-company', function(req, res, next){
+  if (req.body){
+    var company = req.body;
+    req.app.get('mongodb').collection('company').updateOne({name:company.name}, {$set: company}, {upsert:true}, function(err, r){
+      if (err) next(new Error('cant save or update'));
+      else res.redirect('/admin');
+    });
+  }
+});
+app.get('/logout', function(req, res, next){
+  res.cookie('user', {
+    user: 'not auth',
+    domain:'localhost',
+    path:'/admin',
+    secure: true,
+    httpOnly: true,
+    expires: 1
+  });
+  res.redirect('/admin');
 });
 app.use('/admin', admin);
 app.use('/', routes);

@@ -1,20 +1,38 @@
 extends layout
 
 block content
+    a(href='/logout') Logout
     h1= title
     p Welcome to #{title}
-    select#what-need
-        option(value="456789") 3456789
-        option(value="456781") 3456789
-        option(value="456782") 3456789
-        option(value="456783") 3456789
-    form(action='/save' method="POST")
-        input(type="text" placeholder="Название компании" name="name")
-        input(type="tel" placeholder="Телефон компании" name="tel")
-        input(type="text" placeholder="Ссылка на прайс" name="price")
-        input(type="text" placeholder="Ссылка на каталог LD" name="katalog_ld")
-        input(type="text" placeholder="Ссылка на каталог кранов Стриж" name="katalog_strig")
-        input(type="text" placeholder="Ссылка на каталог ADL" name="katalog_ADL")
-        input(type="text" placeholder="Ссылка на прайс ADL" name="price_ADL")
-        input(type="text" placeholder="Ссылка на сайт" name="site")
-        input(type="submit" value="Отправить")
+    if toggle === true
+        form(action="/get-company" method="post")
+            select(name='company')
+                each val in names
+                    option(value="#{val}") #{val}
+            input(type='submit' value='Загрузить')
+    else
+        form(action='/upsert-company' method="POST")
+            p Название Компании
+            input(type="text" placeholder="#{company ? company.name : 'Название компании'}" name="name")
+            br
+            p Телефон компании
+            input(type="tel" placeholder="#{company ? company.tel : 'Телефон компании'}" name="tel")
+            br
+            p Ссылка на прайс
+            input(type="text" placeholder="#{company ? company.price : 'Ссылка на прайс'}" name="price")
+            br
+            p Ссылка на каталог LD
+            input(type="text" placeholder="#{company ? company.katalog_ld : 'Ссылка на каталог LD'}" name="katalog_ld")
+            br
+            p Ссылка на каталог кранов Стриж
+            input(type="text" placeholder="#{company ? company.katalog_strig : 'Ссылка на каталог кранов Стриж'}" name="katalog_strig")
+            br
+            p Ссылка на каталог ADL
+            input(type="text" placeholder="#{company ? company.katalog_ADL : 'Ссылка на каталог ADL'}" name="katalog_ADL")
+            br
+            p Ссылка на прайс ADL
+            input(type="text" placeholder="#{company ? company.price_ADL : 'Ссылка на прайс ADL'}" name="price_ADL")
+            br
+            p Ссылка на сайт
+            input(type="text" placeholder="#{company ? company.url : 'Ссылка на сайт'}" name="url")
+            input(type="submit" value="Отправить")
