@@ -1,5 +1,54 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.container-fluid
+    header.row
+      h1.brand.col-lg-4.col-lg-offset-1 ООО Промарматура
+      span.tel.col-lg-3.col-lg-offset-3 +7(3852)20-19-51
+    main.row
+      div.background.col-lg-12
+        div.frontground.col-lg-8.col-lg-offset-2.clearfix
+          div.discount
+            div| <prime>Весь август</prime>
+            | для новых <br/>
+            | клиентов <br/>
+            | скидка <prime style="font-weight: bold">7%!</prime>
+          button.block.prim(type='button', data-toggle='modal', data-target='#myModal')
+            a(href="#") Скачать весь прайс-лист
+          button.block(type='button', data-toggle='modal', data-target='#myModal')
+            a(href="#") Скачать каталог кранов LD
+          button.block.long-text(type='button', data-toggle='modal', data-target='#myModal')
+            a(href="#") Скачать какалог кранов Стриж
+          button.block(type='button', data-toggle='modal', data-target='#myModal')
+            a(href="#") Скачать каталог ADL
+          button.block(type='button', data-toggle='modal', data-target='#myModal')
+            a(href="#") Скачать прайс ADL
+          button.block.warn(type='button', data-toggle='modal', data-target='#myModal')
+            a(href="#") Посетить наш сайт
+
+    #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+            h4#myModalLabel.modal-title Оставьте свои данные.
+          .modal-body
+            | Это позволит Вам получать актуальную информацию по акциям,
+            | распродажам и прайсам компании.
+          .modal-footer
+            form.form-horizontal
+              .form-group
+                label.col-sm-2.control-label(for='inputEmail') Email
+                .col-sm-10
+                  input#inputEmail.form-control(type='email', placeholder='Email')
+              .form-group
+                label.col-sm-2.control-label(for='inputName') Имя
+                .col-sm-10
+                  input#inputName.form-control(type='text', placeholder='Имя')
+              .form-group
+                .col-sm-offset-2.col-sm-10
+                  button.btn.btn-default(type='submit') Отправить
+    footer.row
+      span.brand.col-lg-4.col-lg-offset-1 ООО Промарматура
+      span.tel.col-lg-3.col-lg-offset-3 +7(3852)20-19-51

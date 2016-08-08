@@ -1,8 +1,93 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
   color: #00B7FF; }
+
+header {
+  border: 1px solid #2b2b3c;
+  background-color: #2b2b3c; }
+
+.brand {
+  color: white;
+  font-weight: bold;
+  font-size: 36px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: left; }
+
+.tel {
+  color: white;
+  font-size: 36px;
+  float: right;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.background {
+  background-image: url(../img/fon2.jpg);
+  background-size: cover;
+  height: 78vh;
+  border: 1px solid gray; }
+
+.frontground {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-top: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px; }
+
+.discount {
+  margin: 26px;
+  font-size: 65px;
+  float: left;
+  clear: left; }
+
+prime {
+  color: #e52e00; }
+
+.block {
+  float: right;
+  width: 40%;
+  background-color: black;
+  clear: right;
+  margin: 10px;
+  padding: 10px;
+  font-size: 22px; }
+
+.long-text {
+  font-size: 20px; }
+
+a:link, a:visited, a:hover {
+  text-decoration: none;
+  color: white; }
+
+.block {
+  background-color: #2182c5;
+  border: none;
+  min-width: 275px; }
+
+.warn {
+  background-color: #bf6bd9; }
+
+.prim {
+  background-color: #b44b31; }
+
+.block:hover {
+  background-color: #0088e6; }
+
+.warn:hover {
+  background-color: #d445ff; }
+
+.prim:hover {
+  background-color: #e52e00; }
+
+footer {
+  border: 1px solid #2b2b3c;
+  background-color: #2b2b3c; }
+
+footer .brand {
+  font-size: 26px; }
+
+footer .tel {
+  font-size: 26px; }
 
 /*# sourceMappingURL=style.css.map */

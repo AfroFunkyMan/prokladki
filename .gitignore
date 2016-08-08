@@ -48,3 +48,4 @@ jspm_packages
 /node_modules/
 /public/css/style.css.map
 /public/css/style.css
+/public/bower_components/
