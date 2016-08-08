@@ -46,5 +46,5 @@ jspm_packages
 .node_repl_history
 
 /node_modules/
-/public/stylesheets/style.css.map
-/public/stylesheets/style.css
+/public/css/style.css.map
+/public/css/style.css
