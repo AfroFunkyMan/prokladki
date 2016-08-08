@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}
+    form(action='/login' method='post')
+        input(type='text' placeholder='Логин' name='login')
+        input(type='password' placeholder='Пароль' name='pass')
+        input(type='submit' value='Войти')

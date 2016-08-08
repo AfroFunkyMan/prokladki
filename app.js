@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var admin = require('./routes/admin');
 
 var app = express();
 
@@ -27,9 +27,23 @@ app.use(require('node-sass-middleware')({
   sourceMap: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.post('/login', function(req, res, next){
+  if (req.body.login === 'admin' && req.body.pass === 'Heckfy1978ycr!'){
+    res.cookie('user', {
+      user: 'p1yebcv3764cvb19348fyubgd48c7r9627rbc0cr87fg9n4cybgrq87vwavrtvycbfn4g7q8r7vbtcf9n67w4tvb6cfb9q',
+      domain:'.localhost',
+      path:'/admin',
+      secure: true,
+      httpOnly: true,
+      expires: new Date(Date.now() + 900000)
+    });
+    res.redirect('/admin');
+  } else {
+    res.render('login', {title: 'u r not auth!'});
+  }
+});
+app.use('/admin', admin);
 app.use('/', routes);
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

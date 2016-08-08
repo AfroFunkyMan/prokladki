@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}
+    select#what-need
+        option(value="456789") 3456789
+        option(value="456781") 3456789
+        option(value="456782") 3456789
+        option(value="456783") 3456789
+    form(action='/save' method="POST")
+        input(type="text" placeholder="Название компании" name="name")
+        input(type="tel" placeholder="Телефон компании" name="tel")
+        input(type="text" placeholder="Ссылка на прайс" name="price")
+        input(type="text" placeholder="Ссылка на каталог LD" name="katalog_ld")
+        input(type="text" placeholder="Ссылка на каталог кранов Стриж" name="katalog_strig")
+        input(type="text" placeholder="Ссылка на каталог ADL" name="katalog_ADL")
+        input(type="text" placeholder="Ссылка на прайс ADL" name="price_ADL")
+        input(type="text" placeholder="Ссылка на сайт" name="site")
+        input(type="submit" value="Отправить")
