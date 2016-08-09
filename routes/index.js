@@ -11,7 +11,7 @@ router.get('/:company', function(req, res, next) {
   req.app.get('mongodb').collection('company').findOne({url:req.params.company}, function(err, company){
     if (err) next(new Error('not find that company'));
     else {
-      if (company) res.render('index', {title:'express'});
+      if (company) res.render('index', {title:'express', company : company});
       else next(new Error('not find that company'));
     }
   });

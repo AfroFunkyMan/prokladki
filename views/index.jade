@@ -1,18 +1,17 @@
 extends layout
 
 block content
-  div.container-fluid
-    header.row
-      h1.brand.col-lg-4.col-lg-offset-1 ООО Промарматура
-      span.tel.col-lg-3.col-lg-offset-3 +7(3852)20-19-51
-    main.row
-      div.background.col-lg-12
-        div.frontground.col-lg-8.col-lg-offset-2.clearfix
-          div.discount
-            div| <prime>Весь август</prime>
-            | для новых <br/>
-            | клиентов <br/>
-            | скидка <prime style="font-weight: bold">7%!</prime>
+    header.row.container-fluid
+      h1.brand.col-lg-4.col-lg-offset-1 #{company.name}
+      span.tel.col-lg-3.col-lg-offset-3 #{company.tel}
+    main.container-fluid.background.col-lg-12
+      div.frontground.col-lg-8.col-lg-offset-2.clearfix.row
+        div.col-xs-6
+          div| <prime>Весь август</prime>
+          | для новых <br/>
+          | клиентов <br/>
+          | скидка <prime style="font-weight: bold">7%!</prime>
+        div.col-xs-6
           button.block.prim(type='button', data-toggle='modal', data-target='#myModal')
             a(href="#") Скачать весь прайс-лист
           button.block(type='button', data-toggle='modal', data-target='#myModal')
@@ -49,6 +48,6 @@ block content
               .form-group
                 .col-sm-offset-2.col-sm-10
                   button.btn.btn-default(type='submit') Отправить
-    footer.row
-      span.brand.col-lg-4.col-lg-offset-1 ООО Промарматура
-      span.tel.col-lg-3.col-lg-offset-3 +7(3852)20-19-51
+    footer.row.container-fluid
+      span.brand.col-lg-4.col-lg-offset-1 #{company.name}
+      span.tel.col-lg-3.col-lg-offset-3 #{company.tel}

@@ -5,7 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoClient = require('mongodb').MongoClient;
-
+// var Mailchimp = require('mailchimp-api-v3');
+// var mailchimp = new Mailchimp('us11-2354352345345234');
 var routes = require('./routes/index');
 var admin = require('./routes/admin');
 
