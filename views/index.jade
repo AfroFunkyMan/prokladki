@@ -1,31 +1,31 @@
 extends layout
 
 block content
-    header.row.container-fluid
-      h1.brand.col-lg-4.col-lg-offset-1 #{company.name}
-      span.tel.col-lg-3.col-lg-offset-3 #{company.tel}
-    main.container-fluid.background.col-lg-12
-      div.frontground.col-lg-8.col-lg-offset-2.clearfix.row
-        div.col-xs-6
+    header.clearfix
+      span.brand ООО Контора
+      span.tel +7 (999) 888-77-66
+    main.background
+      div.frontground.clearfix
+        div.discount
           div| <prime>Весь август</prime>
           | для новых <br/>
           | клиентов <br/>
           | скидка <prime style="font-weight: bold">7%!</prime>
-        div.col-xs-6
-          button.block.prim(type='button', data-toggle='modal', data-target='#myModal')
+        div
+          button.block.prim
             a(href="#") Скачать весь прайс-лист
-          button.block(type='button', data-toggle='modal', data-target='#myModal')
+          button.block
             a(href="#") Скачать каталог кранов LD
-          button.block.long-text(type='button', data-toggle='modal', data-target='#myModal')
+          button.block.long-text
             a(href="#") Скачать какалог кранов Стриж
-          button.block(type='button', data-toggle='modal', data-target='#myModal')
+          button.block
             a(href="#") Скачать каталог ADL
-          button.block(type='button', data-toggle='modal', data-target='#myModal')
+          button.block
             a(href="#") Скачать прайс ADL
-          button.block.warn(type='button', data-toggle='modal', data-target='#myModal')
+          button.block.warn
             a(href="#") Посетить наш сайт
 
-    #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+    //#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
       .modal-dialog(role='document')
         .modal-content
           .modal-header
@@ -48,6 +48,6 @@ block content
               .form-group
                 .col-sm-offset-2.col-sm-10
                   button.btn.btn-default(type='submit') Отправить
-    footer.row.container-fluid
-      span.brand.col-lg-4.col-lg-offset-1 #{company.name}
-      span.tel.col-lg-3.col-lg-offset-3 #{company.tel}
+    footer
+      span.brand ООО Контора
+      span.tel +2342342343

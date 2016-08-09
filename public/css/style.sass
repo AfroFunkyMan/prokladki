@@ -1,20 +1,32 @@
+html
+  height: 100%
 body
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
-
+  margin: 0px
+  height: 100%
 a
   color: #00B7FF
 //header styles
+.clearfix
+  content: ""
+  display: table
+  clear: both
 header
   //height: 50px
-  border: 1px solid #2b2b3c
+  width: 100%
+  min-width: 30%
   background-color: #2b2b3c
+  padding: 10px 20px
+  box-sizing: border-box
 .brand
   color: white
   font-weight: bold
-  font-size: 36px
+  font-size: 2vw
+  float: left
 .tel
   color: white
-  font-size: 36px
+  font-size: 2vw
+  float: right
 
 //main styles
 $prim-btn-color: #D13A14
@@ -22,37 +34,40 @@ $def-btn-color: #0487E2
 $warn-btn-color: #CC54F0
 .background
   background-image: url(../img/fon2.jpg)
+  //background-repeat: no-repeat
   background-size: cover
-  border: 1px solid gray
+  height: 84%
 .frontground
+  position: absolute
   background-color: rgba(255,255,255,0.5)
-  margin: 20px
-  padding-top: 15px
-  padding-bottom: 15px
+  padding: 15px 5px
+  width: 66%
+  height: 60%
+  border-radius: 6px
+  top: 17%
+  left: 17%
 .discount
-  margin: 26px
-  font-size: 65px
+  font-size: 5vw
+  //min-width: 150px
   float: left
   clear: left
 prime
   color: saturate($prim-btn-color, 40%)
 .block
   float: right
-  width: 40%
-  background-color: black
+  width: 50%
+  background-color: desaturate($def-btn-color,25%)
+  border: none
+  border-radius: 4px
   clear: right
   margin: 10px
   padding: 10px
-  font-size: 22px
+  font-size: 1.8vw
 .long-text
-  font-size: 20px
+  font-size: 1.65vw
 a:link, a:visited, a:hover
   text-decoration: none
   color: white
-.block
-  background-color: desaturate($def-btn-color,25%)
-  border: none
-  min-width: 275px
 .warn
   background-color: desaturate($warn-btn-color,25%)
 .prim

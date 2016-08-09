@@ -1,43 +1,54 @@
+html {
+  height: 100%; }
+
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0px;
+  height: 100%; }
 
 a {
   color: #00B7FF; }
 
+.clearfix {
+  content: "";
+  display: table;
+  clear: both; }
+
 header {
-  border: 1px solid #2b2b3c;
-  background-color: #2b2b3c; }
+  width: 100%;
+  min-width: 30%;
+  background-color: #2b2b3c;
+  padding: 10px 20px;
+  box-sizing: border-box; }
 
 .brand {
   color: white;
   font-weight: bold;
-  font-size: 36px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  font-size: 2vw;
   float: left; }
 
 .tel {
   color: white;
-  font-size: 36px;
-  float: right;
-  margin-top: 10px;
-  margin-bottom: 10px; }
+  font-size: 2vw;
+  float: right; }
 
 .background {
   background-image: url(../img/fon2.jpg);
   background-size: cover;
-  height: 78vh;
-  border: 1px solid gray; }
+  height: 84%; }
 
 .frontground {
+  position: absolute;
   background-color: rgba(255, 255, 255, 0.5);
-  margin-top: 20px;
-  padding-top: 15px;
-  padding-bottom: 15px; }
+  padding: 15px 5px;
+  width: 66%;
+  height: 60%;
+  border-radius: 6px;
+  top: 17%;
+  left: 17%; }
 
 .discount {
-  margin: 26px;
-  font-size: 65px;
+  font-size: 5vw;
   float: left;
   clear: left; }
 
@@ -46,24 +57,21 @@ prime {
 
 .block {
   float: right;
-  width: 40%;
-  background-color: black;
+  width: 50%;
+  background-color: #2182c5;
+  border: none;
+  border-radius: 4px;
   clear: right;
   margin: 10px;
   padding: 10px;
-  font-size: 22px; }
+  font-size: 1.8vw; }
 
 .long-text {
-  font-size: 20px; }
+  font-size: 1.65vw; }
 
 a:link, a:visited, a:hover {
   text-decoration: none;
   color: white; }
-
-.block {
-  background-color: #2182c5;
-  border: none;
-  min-width: 275px; }
 
 .warn {
   background-color: #bf6bd9; }
