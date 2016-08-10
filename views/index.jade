@@ -24,7 +24,22 @@ block content
             a(href="#") Скачать прайс ADL
           button.block.warn
             a(href="#") Посетить наш сайт
-
+    footer.clearfix
+      span.brand   
+      span.tel
+    .modal-overlay
+      .modal
+        span.closer ×
+        h4.modal-title Потратьте одну минуту и заполните пару полей.
+        .modal-content
+          | Это позволит Вам получать актуальную информацию по акциям,
+          | распродажам  и прайсам компании.
+          form.modal-inputs
+            input(type="text" placeholder="Ваше имя" name="name")
+            br
+            input(type="email" placeholder="Ваш e-mail" name="email")
+            br
+            input(type="submit")
     //#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
       .modal-dialog(role='document')
         .modal-content
@@ -48,6 +63,4 @@ block content
               .form-group
                 .col-sm-offset-2.col-sm-10
                   button.btn.btn-default(type='submit') Отправить
-    footer.clearfix
-      span.brand 123123123
-      span.tel
+
